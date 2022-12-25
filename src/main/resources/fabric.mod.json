@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "qolify",
+  "version": "${version}",
+
+  "name": "Qolify",
+  "description": "Some quality of life mods, more to be added! (Zoom, Hotkey labels)",
+  "authors": [
+    "Slushie"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+
+  "license": "MIT License",
+  "icon": "assets/qolify/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.slushie.qolify.Qolify"
+    ]
+  },
+  "mixins": [
+    "qolify.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.11",
+    "fabric-api": "*",
+    "minecraft": "~1.19.3",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
