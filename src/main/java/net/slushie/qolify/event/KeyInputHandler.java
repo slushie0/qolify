@@ -8,7 +8,7 @@ import net.slushie.qolify.Qolify;
 import org.lwjgl.glfw.GLFW;
 
 public class KeyInputHandler {
-    public static final String KEY_CATEGORY_TUTORIAL = "key.category.qolify.tutorial";
+    public static final String KEY_CATEGORY_TUTORIAL = "key.category.qolify.qolify";
     public static final String KEY_ZOOM = "key.qolify.zoom";
 
     public static KeyBinding zoomKey;
@@ -27,7 +27,7 @@ public class KeyInputHandler {
         zoomKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(
                 KEY_ZOOM,
                 InputUtil.Type.KEYSYM,
-                GLFW.GLFW_KEY_C,
+                GLFW.GLFW_KEY_O,
                 KEY_CATEGORY_TUTORIAL
         ));
         registerKeyInputs();
