@@ -17,10 +17,10 @@ public class DrawText implements HudRenderCallback {
         int height = client.getWindow().getScaledHeight();
 
         matrixStack.push();
-        //matrixStack.translate(0, 0, 1000);
+        matrixStack.translate(0, 0, 200);
 
         for (int i = 0; i < 9; i++) {
-            textRenderer.drawWithShadow(matrixStack, list[i].getBoundKeyLocalizedText(), width/2 - 86 + (i * 20), height - 19, 0xFFFFFFFF);
+            textRenderer.drawWithShadow(matrixStack, list[i].getBoundKeyLocalizedText(), width/2 - 87 + (i * 20), height - 19, 0xFFFFFFFF);
         }
         matrixStack.pop();
     }

@@ -20,7 +20,7 @@ public class ZoomMixin {
     public void getZoomLevel(CallbackInfoReturnable<Double> callbackInfo) {
         if(Qolify.isZooming) {
             double fov = callbackInfo.getReturnValue();
-            callbackInfo.setReturnValue(fov * 0.3);
+            callbackInfo.setReturnValue(fov * 0.23);
         }
     }
 }
