@@ -4,12 +4,14 @@ import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.world.GameMode;
 
 public class DrawText implements HudRenderCallback {
     @Override
     public void onHudRender(MatrixStack matrixStack, float tickDelta) {
         final MinecraftClient client = MinecraftClient.getInstance();
         final TextRenderer textRenderer = client.textRenderer;
+        //if (net.minecraft.client.clientGameSession.  = GameMode.SPECTATOR) {}
 
         var list = client.options.hotbarKeys;
 

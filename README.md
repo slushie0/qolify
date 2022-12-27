@@ -2,7 +2,7 @@
 
 ## Modrinth page
 
-(Coming Soon)
+https://modrinth.com/mod/qolify
 
 ## License
 
