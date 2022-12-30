@@ -15,12 +15,20 @@ Right now qolify is in its infancy and doesn't have many features, but that shou
 
 -Hotkey labels (Displays your keybinding on each hotbar slot)
 
-## Planned Features
 -Fullbright (With toggle)
 
--Item Stitching Fix
+## Planned Features
+-Item stitching fix
 
--Food Value Info (In tooltips and on food names)
+-Food value info (In tooltips and on food names)
+
+-Accurate sheared sheep colors
+
+-Shulker box tooltips
+
+-Enchantment descriptions
+
+-Keybind modifiers (Such as CTRL+F, etc.)
 
 -Whatever is popular request!
 
