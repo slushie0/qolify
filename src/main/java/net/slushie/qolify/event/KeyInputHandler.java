@@ -10,8 +10,10 @@ import org.lwjgl.glfw.GLFW;
 public class KeyInputHandler {
     public static final String KEY_CATEGORY_TUTORIAL = "key.category.qolify.qolify";
     public static final String KEY_ZOOM = "key.qolify.zoom";
+    public static final String KEY_FULLBRIGHT = "key.qolify.fullbright";
 
     public static KeyBinding zoomKey;
+    public static KeyBinding fullbrightKey;
 
     public static void registerKeyInputs() {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
@@ -19,6 +21,14 @@ public class KeyInputHandler {
                 Qolify.isZooming = true;
             } else {
                 Qolify.isZooming = false;
+            }
+            if(fullbrightKey.wasPressed()) {
+                Qolify.isFullbright = Qolify.isFullbright ? false : true;
+                if (Qolify.isFullbright) {
+                    client.options.getGamma().setValue(69420.0);
+                } else {
+                    client.options.getGamma().setValue(1.0);
+                }
             }
         });
     }
@@ -28,6 +38,12 @@ public class KeyInputHandler {
                 KEY_ZOOM,
                 InputUtil.Type.KEYSYM,
                 GLFW.GLFW_KEY_O,
+                KEY_CATEGORY_TUTORIAL
+        ));
+        fullbrightKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+                KEY_FULLBRIGHT,
+                InputUtil.Type.KEYSYM,
+                GLFW.GLFW_KEY_B,
                 KEY_CATEGORY_TUTORIAL
         ));
         registerKeyInputs();

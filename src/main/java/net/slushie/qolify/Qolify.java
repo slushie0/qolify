@@ -11,6 +11,7 @@ public class Qolify implements ModInitializer {
 	public static final String MOD_ID = "qolify";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 	public static boolean isZooming;
+	public static boolean isFullbright;
 
 	@Override
 	public void onInitialize() {

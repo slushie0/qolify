@@ -6,7 +6,8 @@
   "mixins": [
   ],
   "client": [
-    "ZoomMixin"
+    "ZoomMixin",
+    "FullbrightMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -15,9 +15,8 @@ import net.minecraft.client.render.GameRenderer;
 @Environment(EnvType.CLIENT)
 @Mixin(GameRenderer.class)
 public class ZoomMixin {
-
     @Inject(method = "getFov(Lnet/minecraft/client/render/Camera;FZ)D", at = @At("RETURN"), cancellable = true)
-    public void getZoomLevel(CallbackInfoReturnable<Double> callbackInfo) {
+    public void zoom(CallbackInfoReturnable<Double> callbackInfo) {
         if(Qolify.isZooming) {
             double fov = callbackInfo.getReturnValue();
             callbackInfo.setReturnValue(fov * 0.23);
