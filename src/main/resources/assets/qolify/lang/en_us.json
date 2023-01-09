@@ -1,4 +1,7 @@
 {
   "key.category.qolify.qolify": "Qolify",
-  "key.qolify.zoom": "Zoom"
+  "key.qolify.zoom": "Zoom",
+  "key.qolify.fullbright": "Fullbright",
+  "qolify.github": "GitHub",
+  "qolify.modrinth": "Modrinth"
 }

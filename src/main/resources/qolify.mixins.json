@@ -7,7 +7,9 @@
   ],
   "client": [
     "ZoomMixin",
-    "FullbrightMixin"
+    "MouseMixin",
+    "FullbrightMixin",
+    "PotionTimerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

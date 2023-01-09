@@ -17,7 +17,13 @@ Right now qolify is in its infancy and doesn't have many features, but that shou
 
 -Fullbright (With toggle)
 
+-Status effect timers
+
 ## Planned Features
+-ModMenu compatibility
+
+-Zoom customizability
+
 -Item stitching fix
 
 -Food value info (In tooltips and on food names)
@@ -32,12 +38,14 @@ Right now qolify is in its infancy and doesn't have many features, but that shou
 
 -Whatever is popular request!
 
-## Alternate Mods
+## Alternate Mods (These were used to design this one)
 Zoom: https://modrinth.com/mod/zoomify *or* https://modrinth.com/mod/logical-zoom
 
 Hotkeys: https://modrinth.com/mod/cheesy_slot
 
 Fullbright: https://modrinth.com/mod/boosted-brightness
+
+Status Effect Timer: https://github.com/magicus/statuseffecttimer
 
 ## License
 MIT License

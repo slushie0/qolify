@@ -37,7 +37,7 @@ public class KeyInputHandler {
         zoomKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(
                 KEY_ZOOM,
                 InputUtil.Type.KEYSYM,
-                GLFW.GLFW_KEY_O,
+                GLFW.GLFW_KEY_C,
                 KEY_CATEGORY_TUTORIAL
         ));
         fullbrightKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(

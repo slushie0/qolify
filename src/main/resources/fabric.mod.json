@@ -4,13 +4,14 @@
   "version": "${version}",
 
   "name": "Qolify",
-  "description": "Some quality of life mods, more to be added! (Zoom, Hotkey labels)",
+  "description": "Some quality of life mods, more to be added! (Zoom, Hotkey labels, Fullbright, Status effect timer)",
   "authors": [
     "Slushie"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://modrinth.com/mod/qolify",
+    "sources": "https://github.com/slushie0/qolify",
+    "issues": "https://github.com/slushie0/qolify/issues"
   },
 
   "license": "MIT License",
@@ -33,6 +34,18 @@
     "java": ">=17"
   },
   "suggests": {
-    "another-mod": "*"
+    "modmenu": "*"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "qolify.github": "https://github.com/slushie0/qolify",
+        "qolify.modrinth": "https://modrinth.com/mod/qolify"
+      },
+      "id": "qolify",
+      "name": "Qolify",
+      "description": "Qolify is a small Fabric QOL mod with zoom, hotkey labels, status effect timers, and fullbright",
+      "icon": "assets/qolify/icon.png"
+    }
   }
 }
