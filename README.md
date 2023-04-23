@@ -23,6 +23,8 @@ Right now qolify is in its infancy and doesn't have many features, but that shou
 
 ## Planned Features
 
+-Zoom customizability / smooth zoom
+
 -Item stitching fix
 
 -Food value info (In tooltips and on food names)
@@ -37,7 +39,13 @@ Right now qolify is in its infancy and doesn't have many features, but that shou
 
 -Coordinate directions
 
--Banners on shields don't get squished
+-Banners don't lose resolution when on shields
+
+-Clock and compass show up in HUD if in inventory
+
+-Connected textures
+
+-Sheep keep their colors when sheared
 
 -Whatever is popular request!
 
