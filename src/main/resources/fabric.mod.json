@@ -1,51 +1,47 @@
 {
-  "schemaVersion": 1,
-  "id": "qolify",
-  "version": "${version}",
-
-  "name": "Qolify",
-  "description": "Some quality of life mods, more to be added! (Zoom, Hotkey labels, Fullbright, Status effect timer)",
-  "authors": [
-    "Slushie"
-  ],
-  "contact": {
-    "homepage": "https://modrinth.com/mod/qolify",
-    "sources": "https://github.com/slushie0/qolify",
-    "issues": "https://github.com/slushie0/qolify/issues"
-  },
-
-  "license": "MIT License",
-  "icon": "assets/qolify/icon.png",
-
-  "environment": "*",
-  "entrypoints": {
-    "main": [
-      "net.slushie.qolify.Qolify"
-    ]
-  },
-  "mixins": [
-    "qolify.mixins.json"
-  ],
-
-  "depends": {
-    "fabricloader": ">=0.14.11",
-    "fabric-api": "*",
-    "minecraft": "~1.19.3",
-    "java": ">=17"
-  },
-  "suggests": {
-    "modmenu": "*"
-  },
-  "custom": {
-    "modmenu": {
-      "links": {
-        "qolify.github": "https://github.com/slushie0/qolify",
-        "qolify.modrinth": "https://modrinth.com/mod/qolify"
-      },
-      "id": "qolify",
-      "name": "Qolify",
-      "description": "Qolify is a small Fabric QOL mod with zoom, hotkey labels, status effect timers, and fullbright",
-      "icon": "assets/qolify/icon.png"
-    }
-  }
+	"schemaVersion": 1,
+	"id": "qolify",
+	"version": "${version}",
+	"name": "Qolify",
+	"description": "Some quality of life mods, more to be added! (Zoom, Hotkey labels, Fullbright, Status effect timer)",
+	"authors": [
+		"Slushie"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/mod/qolify",
+		"sources": "https://github.com/slushie0/qolify",
+		"issues": "https://github.com/slushie0/qolify/issues"
+	},
+	"license": "MIT License",
+	"icon": "assets/qolify/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.slushie.qolify.Qolify"
+		]
+	},
+	"mixins": [
+		"qolify.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.14.19",
+		"minecraft": "~1.19.4",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"modmenu": "*"
+	},
+	"custom": {
+		"modmenu": {
+			"links": {
+				"qolify.github": "https://github.com/slushie0/qolify",
+				"qolify.modrinth": "https://modrinth.com/mod/qolify"
+			},
+			"id": "qolify",
+			"name": "Qolify",
+			"description": "Some quality of life mods, more to be added! (Zoom, Hotkey labels, Fullbright, Status effect timer)",
+			"icon": "assets/qolify/icon.png"
+		}
+	}
 }

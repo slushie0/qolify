@@ -11,18 +11,17 @@ Qolify is a Fabric mod created with the idea that you shouldn't need to download
 Right now qolify is in its infancy and doesn't have many features, but that should change over time
 
 ## Features
--Zoom (Configurable keybind)
+-Zoom with scrolling (Configurable keybind)
 
 -Hotkey labels (Displays your keybinding on each hotbar slot)
 
--Fullbright (With toggle)
+-Fullbright (With keybind toggle)
 
 -Status effect timers
 
-## Planned Features
--ModMenu compatibility
+-Modmenu compatibility
 
--Zoom customizability
+## Planned Features
 
 -Item stitching fix
 
@@ -35,6 +34,10 @@ Right now qolify is in its infancy and doesn't have many features, but that shou
 -Enchantment descriptions
 
 -Keybind modifiers (Such as CTRL+F, etc.)
+
+-Coordinate directions
+
+-Banners on shields don't get squished
 
 -Whatever is popular request!
 
