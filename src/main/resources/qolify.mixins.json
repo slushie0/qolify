@@ -8,7 +8,8 @@
 		"ZoomMixin",
 		"MouseMixin",
 		"FullbrightMixin",
-		"StatusEffectTimerMixin"
+		"StatusEffectTimerMixin",
+		"DrawHUDMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

@@ -21,7 +21,11 @@ Right now qolify is in its infancy and doesn't have many features, but that shou
 
 -Modmenu compatibility
 
+-Clock and compass show up in HUD if in inventory
+
 ## Planned Features
+
+-Move chat up 10px
 
 -Zoom customizability / smooth zoom
 
@@ -39,13 +43,9 @@ Right now qolify is in its infancy and doesn't have many features, but that shou
 
 -Coordinate directions
 
--Banners don't lose resolution when on shields
-
--Clock and compass show up in HUD if in inventory
-
 -Connected textures
 
--Sheep keep their colors when sheared
+-Banners don't lose resolution when on shields
 
 -Whatever is popular request!
 
@@ -57,6 +57,8 @@ Hotkeys: https://modrinth.com/mod/cheesy_slot
 Fullbright: https://modrinth.com/mod/boosted-brightness
 
 Status Effect Timer: https://github.com/magicus/statuseffecttimer
+
+Shield Banner Resolution: https://vanillatweaks.net/picker/resource-packs/ HD Banner Patterns
 
 ## License
 MIT License

@@ -1,4 +1,4 @@
-package net.slushie.qolify.text;
+package net.slushie.qolify.hud;
 
 import net.fabricmc.fabric.api.client.rendering.v1.HudRenderCallback;
 import net.minecraft.client.MinecraftClient;
@@ -12,6 +12,10 @@ public class DrawHotkeys implements HudRenderCallback {
         final MinecraftClient client = MinecraftClient.getInstance();
         final PlayerEntity playerEntity = client.player;
 
+        if (playerEntity.isSpectator()) {
+            return;
+        }
+
         final TextRenderer textRenderer = client.textRenderer;
 
         var list = client.options.hotbarKeys;
@@ -21,15 +25,9 @@ public class DrawHotkeys implements HudRenderCallback {
 
         matrixStack.push();
         matrixStack.translate(0, 0, 200);
-
-        if (playerEntity.isSpectator()) {
-            return;
-        }
-
         for (int i = 0; i < 9; i++) {
             textRenderer.drawWithShadow(matrixStack, list[i].getBoundKeyLocalizedText(), width/2 - 87 + (i * 20), height - 19, 0xFFFFFFFF);
         }
-
         matrixStack.pop();
     }
 }

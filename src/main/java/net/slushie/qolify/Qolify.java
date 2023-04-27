@@ -3,7 +3,7 @@ package net.slushie.qolify;
 import net.fabricmc.api.ModInitializer;
 
 import net.slushie.qolify.event.KeyInputHandler;
-import net.slushie.qolify.text.DrawHotkeys;
+import net.slushie.qolify.hud.DrawHotkeys;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -15,6 +15,9 @@ public class Qolify implements ModInitializer {
     public static boolean isFullbright;
     public static double zoomLevel;
     public static double globalFov;
+    public static boolean renderHotbarHUD = true;
+    public static boolean needItemToRenderHotbarHUD = true;
+    public static boolean drawHotkeys;
 
     @Override
     public void onInitialize() {
