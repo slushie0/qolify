@@ -4,9 +4,10 @@ import com.google.common.collect.Ordering;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.DrawContext;
+import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.client.resource.language.I18n;
+import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.util.math.MathHelper;
@@ -17,18 +18,19 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+import java.io.Console;
 import java.util.Collection;
 
 // Set priority to 500, to load before default at 1000. This is to better cooperate with HUDTweaks.
 @Environment(EnvType.CLIENT)
 @Mixin(value = InGameHud.class, priority = 500)
-public abstract class StatusEffectTimerMixin {
+public abstract class StatusEffectTimerMixin extends DrawableHelper {
     @Shadow @Final
     private MinecraftClient client;
 
     @Inject(method = "renderStatusEffectOverlay", at = @At("TAIL"))
-    private void renderDurationOverlay(DrawContext context, CallbackInfo c) {
-        assert this.client.player != null;
+    private void renderDurationOverlay(MatrixStack matrices, CallbackInfo c) {
         Collection<StatusEffectInstance> collection = this.client.player.getStatusEffects();
         if (!collection.isEmpty()) {
             // Replicate vanilla placement algorithm to get the duration
@@ -60,14 +62,14 @@ public abstract class StatusEffectTimerMixin {
                         duration = "∞";
                     }
                     int durationLength = client.textRenderer.getWidth(duration);
-                    context.drawTextWithShadow(client.textRenderer, duration, x + 13 - (durationLength / 2), y + 14, 0xFFFFFFFF);
+                    drawTextWithShadow(matrices, client.textRenderer, duration, x + 13 - (durationLength / 2), y + 14, 0xFFFFFFFF);
 
                     int amplifier = statusEffectInstance.getAmplifier();
                     if (amplifier > 0) {
-                        // Most languages have "translations" for amplifier 1-5, converting to roman numerals
+                        // Most langages has "translations" for amplifier 1-5, converting to roman numerals
                         String amplifierString = (amplifier < 6) ? I18n.translate("potion.potency." + amplifier) : "**";
                         int amplifierLength = client.textRenderer.getWidth(amplifierString);
-                        context.drawTextWithShadow(client.textRenderer, amplifierString, x + 22 - amplifierLength, y + 3, 0xFFFFFFFF);
+                        drawTextWithShadow(matrices, client.textRenderer, amplifierString, x + 22 - amplifierLength, y + 3, 0xFFFFFFFF);
                     }
                 }
             }

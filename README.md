@@ -21,8 +21,6 @@ Right now qolify is in its infancy and doesn't have many features, but that shou
 
 -Modmenu compatibility
 
--Clock and compass show up in HUD if in inventory
-
 ## Planned Features
 
 -Move chat up 10px
