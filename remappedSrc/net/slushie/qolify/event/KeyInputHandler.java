@@ -17,13 +17,9 @@ public class KeyInputHandler {
 
     public static void registerKeyInputs() {
         ClientTickEvents.END_CLIENT_TICK.register(client -> {
-            if(zoomKey.isPressed()) {
-                Qolify.isZooming = true;
-            } else {
-                Qolify.isZooming = false;
-            }
+            Qolify.isZooming = zoomKey.isPressed();
             if(fullbrightKey.wasPressed()) {
-                Qolify.isFullbright = Qolify.isFullbright ? false : true;
+                Qolify.isFullbright = !Qolify.isFullbright;
                 if (Qolify.isFullbright) {
                     client.options.getGamma().setValue(69420.0);
                 } else {

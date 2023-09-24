@@ -10,22 +10,23 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(Mouse.class)
 public class MouseMixin {
-    @Shadow private double eventDeltaWheel;
+    @Shadow
+    double eventDeltaVerticalWheel;
     @Inject(
             method = "onMouseScroll",
-            at = @At(value = "FIELD", target = "Lnet/minecraft/client/Mouse;eventDeltaWheel:D", ordinal = 7),
+            at = @At(value = "FIELD", target = "Lnet/minecraft/client/Mouse;eventDeltaVerticalWheel:D", ordinal = 7),
             cancellable = true
     )
     private void zoomScrollMixin(CallbackInfo info) {
         if (!Qolify.isZooming) return;
         info.cancel();
 
-        if (eventDeltaWheel < 0.0) {
+        if (eventDeltaVerticalWheel < 0.0) {
             if (Qolify.globalFov * Qolify.zoomLevel*1.5 > Qolify.globalFov) return;
             Qolify.zoomLevel = Qolify.zoomLevel*1.5;
         }
 
-        if (eventDeltaWheel > 0.0) {
+        if (eventDeltaVerticalWheel > 0.0) {
             if (Qolify.zoomLevel/1.5 < 0.000001) return;
             Qolify.zoomLevel = Qolify.zoomLevel/1.5;
         }
