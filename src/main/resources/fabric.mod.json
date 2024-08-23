@@ -3,7 +3,7 @@
 	"id": "qolify",
 	"version": "${version}",
 	"name": "Qolify",
-	"description": "Some quality of life mods, more to be added! (Zoom, Hotkey labels, Fullbright, Status effect timer)",
+	"description": "Quality of life mod",
 	"authors": [
 		"Slushie"
 	],
@@ -12,21 +12,24 @@
 		"sources": "https://github.com/slushie0/qolify",
 		"issues": "https://github.com/slushie0/qolify/issues"
 	},
-	"license": "MIT License",
+	"license": "MIT",
 	"icon": "assets/qolify/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
 			"net.slushie.qolify.Qolify"
+		],
+		"fabric-datagen": [
+			"net.slushie.qolify.QolifyDataGenerator"
 		]
 	},
 	"mixins": [
 		"qolify.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.14.22",
-		"minecraft": "~1.20",
-		"java": ">=17",
+		"fabricloader": ">=0.16.2",
+		"minecraft": "~1.21.1",
+		"java": ">=21",
 		"fabric-api": "*"
 	},
 	"suggests": {

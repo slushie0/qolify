@@ -10,8 +10,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(Mouse.class)
 public class MouseMixin {
-    @Shadow
-    double eventDeltaVerticalWheel;
+    @Shadow private double eventDeltaVerticalWheel;
     @Inject(
             method = "onMouseScroll",
             at = @At(value = "FIELD", target = "Lnet/minecraft/client/Mouse;eventDeltaVerticalWheel:D", ordinal = 7),

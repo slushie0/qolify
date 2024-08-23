@@ -6,9 +6,11 @@ import net.fabricmc.api.Environment;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.hud.InGameHud;
+import net.minecraft.client.render.RenderTickCounter;
 import net.minecraft.client.resource.language.I18n;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.math.MathHelper;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Final;
@@ -20,6 +22,8 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import java.util.Collection;
 
+import static net.slushie.qolify.Qolify.LOGGER;
+
 // Set priority to 500, to load before default at 1000. This is to better cooperate with HUDTweaks.
 @Environment(EnvType.CLIENT)
 @Mixin(value = InGameHud.class, priority = 500)
@@ -28,17 +32,16 @@ public abstract class StatusEffectTimerMixin {
     private MinecraftClient client;
 
     @Inject(method = "renderStatusEffectOverlay", at = @At("TAIL"))
-    private void renderDurationOverlay(DrawContext context, CallbackInfo c) {
+    private void renderDurationOverlay(DrawContext context, RenderTickCounter rt, CallbackInfo c) {
         assert this.client.player != null;
         Collection<StatusEffectInstance> collection = this.client.player.getStatusEffects();
         if (!collection.isEmpty()) {
             // Replicate vanilla placement algorithm to get the duration
             // labels to line up exactly right.
-
             int beneficialCount = 0;
             int nonBeneficialCount = 0;
             for (StatusEffectInstance statusEffectInstance : Ordering.natural().reverse().sortedCopy(collection)) {
-                StatusEffect statusEffect = statusEffectInstance.getEffectType();
+                StatusEffect statusEffect = statusEffectInstance.getEffectType().value();
                 if (statusEffectInstance.shouldShowIcon()) {
                     int x = this.client.getWindow().getScaledWidth();
                     int y = 1;
@@ -61,7 +64,7 @@ public abstract class StatusEffectTimerMixin {
                         duration = "∞";
                     }
                     int durationLength = client.textRenderer.getWidth(duration);
-                    context.drawTextWithShadow(client.textRenderer, duration, x + 13 - (durationLength / 2), y + 14, 0xFFFFFFFF);
+                    context.drawTextWithShadow(client.textRenderer, duration, x+3, y + 14, 0xFFFFFFFF);
 
                     int amplifier = statusEffectInstance.getAmplifier();
                     if (amplifier > 0) {
@@ -85,7 +88,7 @@ public abstract class StatusEffectTimerMixin {
             // Vanilla considers everything above this to be infinite
             return "**";
         } else if (seconds > 60 & seconds < 600) {
-            return seconds / 60 + ":" + seconds % 60;
+            return seconds / 60 + ":" + (seconds % 60 > 9 ? seconds % 60 : "0" + seconds % 60);
         } else if (seconds > 600 ) {
             return seconds / 60 + "m";
         } else {
