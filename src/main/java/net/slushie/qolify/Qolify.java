@@ -13,9 +13,8 @@ public class Qolify implements ModInitializer {
 	public static boolean isZooming;
 	public static boolean isFullbright;
 	public static double zoomLevel;
+	public static double zoomTarget = 1.0;
 	public static double globalFov;
-	public static boolean renderHotbarHUD = true;
-	public static boolean needItemToRenderHotbarHUD = true;
 	public static boolean drawHotkeys;
 
 	@Override

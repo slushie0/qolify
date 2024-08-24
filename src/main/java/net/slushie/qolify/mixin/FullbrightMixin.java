@@ -13,8 +13,8 @@ public class FullbrightMixin {
     @Inject(method = "validate(Ljava/lang/Double;)Ljava/util/Optional;", at = @At("RETURN"), cancellable = true)
     public void removeValidation(Double double_, CallbackInfoReturnable<Optional<Double>> cir) {
         if(Qolify.isFullbright) {
-            if(double_ == 69420.0) {
-                cir.setReturnValue(Optional.of(69420.0));
+            if(double_ == 10000.0) {
+                cir.setReturnValue(Optional.of(10000.0));
             }
         }
     }

@@ -21,13 +21,13 @@ public class MouseMixin {
         info.cancel();
 
         if (eventDeltaVerticalWheel < 0.0) {
-            if (Qolify.globalFov * Qolify.zoomLevel*1.5 > Qolify.globalFov) return;
-            Qolify.zoomLevel = Qolify.zoomLevel*1.5;
+            if (Qolify.globalFov * Qolify.zoomTarget*1.5 > Qolify.globalFov) return;
+            Qolify.zoomTarget = Qolify.zoomTarget*1.5;
         }
 
         if (eventDeltaVerticalWheel > 0.0) {
-            if (Qolify.zoomLevel/1.5 < 0.000001) return;
-            Qolify.zoomLevel = Qolify.zoomLevel/1.5;
+            if (Qolify.zoomTarget/1.5 < 0.04) return;
+            Qolify.zoomTarget = Qolify.zoomTarget/1.5;
         }
     }
 }

@@ -21,6 +21,9 @@
 		],
 		"fabric-datagen": [
 			"net.slushie.qolify.QolifyDataGenerator"
+		],
+		"modmenu": [
+			"net.slushie.qolify.Qolify.integrations.ModMenuIntegration"
 		]
 	},
 	"mixins": [

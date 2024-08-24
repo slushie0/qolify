@@ -21,7 +21,7 @@ public class KeyInputHandler {
             if(fullbrightKey.wasPressed()) {
                 Qolify.isFullbright = !Qolify.isFullbright;
                 if (Qolify.isFullbright) {
-                    client.options.getGamma().setValue(69420.0);
+                    client.options.getGamma().setValue(10000.0);
                 } else {
                     client.options.getGamma().setValue(1.0);
                 }
