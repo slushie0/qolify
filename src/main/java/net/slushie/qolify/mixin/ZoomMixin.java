@@ -48,7 +48,6 @@ public class ZoomMixin {
         }
         oldTarget = Qolify.zoomTarget;
         wasZooming = Qolify.isZooming;
-        LOGGER.info(String.valueOf(Qolify.zoomLevel));
     }
     private double lerp (double p1, double p2, double t) {
         return p1 + (p2 - p1) * t;

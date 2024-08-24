@@ -16,9 +16,9 @@ Right now qolify is in its infancy and doesn't have many features, but that shou
 - Fullbright (With keybind toggle)
 - Status effect timers
 - Modmenu compatibility
+- Move chat above armor bar
 
 ## Planned Features
-- Move chat up 10px
 - Item stitching fix
 - Food value info (In tooltips and on food names)
 - Accurate sheared sheep colors
