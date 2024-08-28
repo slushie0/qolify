@@ -9,7 +9,8 @@
 		"MouseMixin",
 		"FullbrightMixin",
 		"StatusEffectTimerMixin",
-		"ChatMixin"
+		"ChatMixin",
+		"SheepMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
